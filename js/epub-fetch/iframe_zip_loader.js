@@ -95,11 +95,8 @@ define(['URIjs', 'readium_shared_js/views/iframe_loader', 'underscore', './disco
                 //           });
                 //       }
                 // });
-                let handler = iframe.onload;
                 let newHandler = () => {
                     callback.call(caller, true);
-                    if (handler)
-                        handler();
                 }
                 iframe.onload = newHandler;
             }
